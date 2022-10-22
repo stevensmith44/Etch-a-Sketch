@@ -13,7 +13,7 @@ for (let i=0;i<size*size;i++){
 
 function ChangeColour(){
   if (click) {
-  currentColour = document.querySelector(".favcolor");
+  currentColour = document.querySelector(".favcolor");    
   currentColour.style.backgroundColor = currentColour.value
   this.style.backgroundColor = currentColour.value;}
 };
@@ -31,6 +31,8 @@ document.querySelector("body").addEventListener("click",() => {
   click = !click
 })
  
+
+
 
 
 
