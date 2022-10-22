@@ -1,24 +1,31 @@
-<html>
+<!DOCTYPE html>
 <html>
 <head>
-	<link rel=stylesheet href="style.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap" rel="stylesheet">
+<title>Etch a Sketch</title>
 </head>
 
 <body>
+ <div class="main">  
+  <div class="buttons">
+        <button class="reset_button" onclick="ResetBoard()">Reset</button>
+        <label for="favcolor"></label>
+        <input type="color" class="favcolor">
+  </div>
+  
+  <div class="container">
+    <div class="title"><h1>Etch-a-Sketch</h1></div>
+    <div class="content">
+      <div class="board"></div>
+    </div>
+  </div>
+ </div>
 
-<center><button class="newGrid">New Grid</button></center>
-
-<div id="container"></div>
-
-<div id="colour-container">
-    
-</div>
-
-<br><br>
-
-<script src="/home/vfs/repos/Etch-a-Sketch/mech.js"></script>
-
+ <script src="mech.js"></script>
+  
 </body>
 
 </html>

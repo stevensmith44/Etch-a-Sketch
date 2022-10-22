@@ -1,0 +1,49 @@
+body{
+	font-family: 'Oswald', sans-serif;
+	display: flex;
+	justify-content: center;
+	background-color:aliceblue;
+  }
+  
+.main{
+	display:flex;
+  }
+  
+.buttons{
+	display:flex;
+	flex-direction: column;
+	margin: 10em 2em 0em 0em;
+  }
+  
+.reset_button{
+	margin:5em 0em;
+	background-color: #f44336; 
+	border-style: solid;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	font-size: 16px;
+  }
+  
+.favcolor{
+	width: 109.81px;
+	height: 52.91px;
+	border-style: solid;
+  }
+  
+.board{
+	height:500px;
+	width:500px;
+	display:grid;
+	border: 1px solid;
+	margin: 0em 0em 1em 0em;
+	box-shadow: 5px 10px;
+  }
+ 
+.title{
+	margin: 0em 0em -1em 9.5em;
+  }
+  
+  
+  
+  

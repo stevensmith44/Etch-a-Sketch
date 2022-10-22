@@ -1,42 +1,36 @@
-// function that builds a grid in the "container"
-function createGrid(x) {
-    for (var rows = 0; rows < x; rows++) {
-        for (var columns = 0; columns < x; columns++) {
-            $("#container").append("<div class='grid'></div>");
-        };
-    };
-    $(".grid").width(960/x);
-    $(".grid").height(960/x);
+let click = true;
+
+function BoardFinished(size) {
+let board = document.querySelector(".board")
+board.style.gridTemplateColumns = `repeat(${size},1fr)`
+board.style.gridTemplateRows = `repeat(${size},1fr)`
+
+for (let i=0;i<size*size;i++){
+  let square = document.createElement("div")
+  square.addEventListener("mouseover", ChangeColour);
+  board.insertAdjacentElement("beforeend",square);
+}
+
+function ChangeColour(){
+  if (click) {
+  currentColour = document.querySelector(".favcolor");
+  currentColour.style.backgroundColor = currentColour.value
+  this.style.backgroundColor = currentColour.value;}
+};
+ 
 };
 
-// function that clears the grid
-function clearGrid(){
-    $(".grid").remove();
-};  
+BoardFinished(50);
 
-// function that prompts the user to select the number of boxes in a new grid
-// the function then also creates that new grid
-function refreshGrid(){
-    var z = prompt("How many boxes per side?");
-    clearGrid();
-    createGrid(z);
-};
+function ResetBoard(){
+  let squares = document.querySelectorAll("div");
+  squares.forEach((div) => div.style.backgroundColor = "aliceblue");
+}
 
-// create a 16x16 grid when the page loads
-// creates a hover effect that changes the color of a square to black when the mouse passes over it, leaving a (pixel) trail through the grid
-// allows the click of a button to prompt the user to create a new grid
-$(document).ready(function() {
-    createGrid(16);
+document.querySelector("body").addEventListener("click",() => {
+  click = !click
+})
+ 
 
-    $(".grid").mouseover(function() {
-        $(this).css("background-color", "black");
-        });
 
-    $(".newGrid").click(function() {
-        refreshGrid();
 
-        $(".grid").mouseover(function() {
-        $(this).css("background-color", "black");
-        });
-    });
-});
