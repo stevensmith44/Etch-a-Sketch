@@ -1,4 +1,4 @@
-let click = true;
+let click = false;
 
 function BoardFinished(size) {
 let board = document.querySelector(".board")
